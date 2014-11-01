@@ -17,8 +17,8 @@ module.exports = function (grunt) {
             src: {
                 src: ['lib/**/*.js', 'index.js', 'gruntfile.js']
             },
-            tests: {
-                src: ['tests/**/*.js']
+            test: {
+                src: ['test/**/*.js']
             }
         },
 
@@ -28,7 +28,7 @@ module.exports = function (grunt) {
                 require: [
                 ]
             },
-            src: ['<%= jshint.tests.src %>']
+            src: ['<%= jshint.test.src %>']
         },
 
         env: {
@@ -42,9 +42,9 @@ module.exports = function (grunt) {
                 files: '<%= jshint.src.src %>',
                 tasks: ['test', 'jshint:src']
             },
-            tests: {
-                files: '<%= jshint.tests.src %>',
-                tasks: ['test', 'jshint:tests']
+            test: {
+                files: '<%= jshint.test.src %>',
+                tasks: ['test', 'jshint:test']
             }
         }
     });
