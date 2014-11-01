@@ -1,0 +1,25 @@
+{
+  "name": "queryable",
+  "version": "0.0.1",
+  "description": "Easy feed a mongoose query via query parameters",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saelfaer/queryable"
+  },
+  "keywords": [
+    "mongoose",
+    "query",
+    "filter",
+    "requestparameters"
+  ],
+  "author": "Sander Houttekier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saelfaer/queryable/issues"
+  },
+  "homepage": "https://github.com/saelfaer/queryable"
+}
