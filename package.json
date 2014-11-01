@@ -16,10 +16,23 @@
     "filter",
     "requestparameters"
   ],
-  "author": "Sander Houttekier",
+  "author": "Sander Houttekier <sander.houttekier@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/saelfaer/queryable/issues"
   },
-  "homepage": "https://github.com/saelfaer/queryable"
+  "homepage": "https://github.com/saelfaer/queryable",
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "mongoose": "^3.8.18"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-env": "^0.4.2",
+    "jshint-stylish": "^1.0.0",
+    "mocha": "^2.0.1",
+    "should": "^4.1.0"
+  }
 }
