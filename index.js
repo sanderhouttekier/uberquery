@@ -1,1 +1,1 @@
-module.exports = require('./lib/queryable');
+module.exports = require('./lib/uberquery');
