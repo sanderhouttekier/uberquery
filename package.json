@@ -1,5 +1,5 @@
 {
-  "name": "queryable",
+  "name": "uberquery",
   "version": "0.0.1",
   "description": "Easy feed a mongoose query via query parameters",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/saelfaer/queryable"
+    "url": "https://github.com/saelfaer/uberquery"
   },
   "keywords": [
     "mongoose",
@@ -19,9 +19,9 @@
   "author": "Sander Houttekier <sander.houttekier@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/saelfaer/queryable/issues"
+    "url": "https://github.com/saelfaer/uberquery/issues"
   },
-  "homepage": "https://github.com/saelfaer/queryable",
+  "homepage": "https://github.com/saelfaer/uberquery",
   "dependencies": {
     "lodash": "^2.4.1",
     "mongoose": "^3.8.18"
