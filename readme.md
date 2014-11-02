@@ -30,7 +30,7 @@ npm install --save uberquery
 
 Initialize it into your application and pass in your mongoose, on which you registered your models
 
-```
+``` js
 var Uberquery = require('uberquery');
 Uberquery.init(mongoose);
 ```
@@ -39,7 +39,7 @@ You are done. That is all you need to do to start using Uberquery.
 
 Now you can start querying.
 
-```
+``` js
 // start a new query
 // feed it the request object.
 // feed it the name of the mongoose model you want to query.
