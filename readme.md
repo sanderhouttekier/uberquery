@@ -49,9 +49,41 @@ var query = Uberquery.query(req, 'User');
 You feed Uberquery the request object so it can generate a query based on the request paramters it finds. 
 The name of the entity you pass as second parameter should be the same name as your mongoose model.
 
-## Available Filters
+## Manipulating the query afterwards
 
-### Primary Filters
+The query you recieve from Uberquery is a regular mongoose query. so you can manipulate it as you seem fit.
+
+``` js
+var query = Uberquery.query(req, 'User');
+query.populate('relatives');
+```
+
+## Executing the query to recieve results
+
+**Manually**
+
+``` js
+var query = Uberquery.query(req, 'User');
+query.exec(function afterQueryExecution(err, list) {
+    if(err) {
+        // handle error
+    }
+    res.json(list); // send the resultset to the client
+});
+```
+
+**Using Uberquery's handlers**
+
+``` js
+var query = Uberquery.query(req, 'User');
+Uberquery.handlers.get(req, res, next);
+```
+
+## Querystring filters picked up by Uberquery
+
+### Available Filters
+
+#### Primary Filters
 
 **select** usage: `?select=property1[ property2][ property3]`  
 Do you only need a few properties? you can filter the return value with only the propertys you need by passing 
@@ -71,7 +103,7 @@ more information what sorting is accepted by mongoose can be found [here](http:/
 *note* you can add sorting to the Uberquery in your backend nodeJS handler any time but use the string equivalent if you are 
 passing it in through the url parameters.
 
-### Secondary Filters
+#### Secondary Filters
 
 You can of course also filter on your own entities properties. Supose you have a `User` entity with a `name`, `email`, `age` and `gender`. 
 You could easily filter on it using one of the following queries:
@@ -99,8 +131,7 @@ A list of all operations possible can be found here:
 | **in**                       | in     | `/users?gender__in=female,male`                      | returns all female and male users and will leave out users where gender is not set, or an other value than male or female                   |
 | **Regex**                    | regex  | `/users?username__regex=/^saelfaer/i`                | returns all users with a username starting with `saelfaer` (case sensitive)           |
 
-
-## Available Alterables
+### Available Alterables
 
 **poulate** usage: `?populate=property1[ property2][ propeprty3]`  
 Populating a referenced property. You can populate more than 1 property by joining your propertynames with a space.
@@ -108,6 +139,12 @@ Populating a referenced property. You can populate more than 1 property by joini
 ## Remarks Or Issues
 
 Got a remark or issue? I'm open to improvements so post your remarks in the [issues](/saelfaer/uberquery/issues)
+
+## credits
+
+The idea for this project sprung when I was using [node-restful](baugarten/node-restful) 
+and wanted to use his ease of filtering on a custom route not falling in his restful way of working. 
+I created this project from scratch but can't say some of the code isn't heavily influenced by the way node-restful works.
 
 ## License (MIT)
 
