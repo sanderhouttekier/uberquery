@@ -53,15 +53,57 @@ The name of the entity you pass as second parameter should be the same name as y
 
 ### Primary Filters
 
-*comming soon*
+**select** usage: `?select=property1[ property2][ property3]`  
+Do you only need a few properties? you can filter the return value with only the propertys you need by passing 
+their names into the `select` filter.
+
+**limit** usage: `?limit=number`  
+Want only 5 items? just use `?limit=5`.
+
+**skip** usage: `?skip=number`  
+Skipping the first 5 items? just use `?skip=5`.
+
+**sort** usage: `?sort=property1[ property2]`  
+Sorting your resultset on a certain property can be done just like mongoose accepts string sorts. 
+Sort order can thus be passed via a `-` in front of the propertyname. (e.g. `?sort=-propertyname`).
+
+more information what sorting is accepted by mongoose can be found [here](http://mongoosejs.com/docs/api.html#query_Query-sort). 
+*note* you can add sorting to the Uberquery in your backend nodeJS handler any time but use the string equivalent if you are 
+passing it in through the url parameters.
 
 ### Secondary Filters
 
-*comming soon*
+You can of course also filter on your own entities properties. Supose you have a `User` entity with a `name`, `email`, `age` and `gender`. 
+You could easily filter on it using one of the following queries:
+
+```
+?name=sander
+?age__lte=30
+?gender__ne=male
+...
+```
+
+*note* searching on strings like `name=sander` is treated case sensitive.
+
+A list of all operations possible can be found here:
+*note* all examples work further on the usecase of having a `/users` route which handles the request through an Uberquery.
+
+| Filter                       | Query  | Example                                              | Description                     |
+|------------------------------|--------|------------------------------------------------------|---------------------------------|
+| **equal**                    | equals | `/users?gender=male` or `/users?gender__equals=male` | both return all male users (case sensitive when searching a string property)     |
+| **not equal**                | ne     | `/users?gender__ne=male`                             | returns all users who are not male (`female` or not set)          |
+| **greater than**             | gt     | `/users?age__gt=18`                                  | returns all users older than 18                                   |
+| **greater than or equal to** | gte    | `/users?age__gte=18`                                 | returns all users 18 and older                                    |
+| **lower than**               | lt     | `/users?age__lt=30`                                  | returns all users age 29 and younger                              |
+| **lower than or equal to**   | lte    | `/users?age__lte=30`                                 | returns all users age 30 and younger                              |
+| **in**                       | in     | `/users?gender__in=female,male`                      | returns all female and male users and will leave out users where gender is not set, or an other value than male or female                   |
+| **Regex**                    | regex  | `/users?username__regex=/^saelfaer/i`                | returns all users with a username starting with `saelfaer` (case sensitive)           |
+
 
 ## Available Alterables
 
-*comming soon*
+**poulate** usage: `?populate=property1[ property2][ propeprty3]`  
+Populating a referenced property. You can populate more than 1 property by joining your propertynames with a space.
 
 ## Remarks Or Issues
 
