@@ -1,6 +1,6 @@
 {
   "name": "uberquery",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Feed a mongoose query with query parameters",
   "main": "index.js",
   "scripts": {
@@ -24,8 +24,6 @@
   },
   "homepage": "https://github.com/saelfaer/uberquery",
   "dependencies": {
-    "lodash": "^2.4.1",
-    "mongoose": "^3.8.18"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
