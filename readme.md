@@ -11,9 +11,7 @@ Do you build a search functionality for single entity? Well, charge your query w
 most native filters like aforementioned `limit` and `offset` or testing `equals` or `gte` 
 directly from the requested url.
 
-## Remark
-
-I hear you, what about performance, or what about security? If anyone can query my database
+**remark** I hear you, what about performance, or what about security? If anyone can query my database
 from the ease of typing in an url with some parameters, where is my security?
 
 Well, Uberquery is not secure, just as much as it includes caching. But then again,
@@ -135,6 +133,15 @@ A list of all operations possible can be found here:
 
 **poulate** usage: `?populate=property1[ property2][ propeprty3]`  
 Populating a referenced property. You can populate more than 1 property by joining your propertynames with a space.
+
+## Changelog
+
+**v0.1.2**
+initial release
+* create queries
+* filter using the querystring
+* manipulate them afterwards
+* execute them and send the result to the client via built in handlers
 
 ## Remarks Or Issues
 
