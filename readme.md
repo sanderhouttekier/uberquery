@@ -2,7 +2,7 @@
 
 ## About
 
-Supercharge your mongoose queries with request query values or parameters 
+Uberquery supercharges your mongoose queries with the request query-parameters 
 allowing you to directly limt select, offset, filter or populate your mongoose 
 query from the request.
 
@@ -135,6 +135,10 @@ A list of all operations possible can be found here:
 Populating a referenced property. You can populate more than 1 property by joining your propertynames with a space.
 
 ## Changelog
+
+**v0.1.4**
+* Rework get handler returning the result as is
+* Add getOne handler returning the first item if result is a list, or the entire object
 
 **v0.1.3**
 * cleanup of unused dependencies
