@@ -2,7 +2,7 @@
 
 ## About
 
-Supercharge your mongoose queries with request query values or parameters 
+Uberquery supercharges your mongoose queries with the request query-parameters 
 allowing you to directly limt select, offset, filter or populate your mongoose 
 query from the request.
 
