@@ -136,6 +136,10 @@ Populating a referenced property. You can populate more than 1 property by joini
 
 ## Changelog
 
+**v0.1.4**
+* Rework get handler returning the result as is
+* Add getOne handler returning the first item if result is a list, or the entire object
+
 **v0.1.3**
 * cleanup of unused dependencies
 * fixed package.json incorrectly stating ICS as license
